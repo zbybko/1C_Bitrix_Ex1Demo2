@@ -20,7 +20,6 @@ IncludeTemplateLangFile(__FILE__);
 		"MENU_CACHE_USE_GROUPS" => "Y",
 		"ROOT_MENU_TYPE" => "left",
 		"USE_EXT" => "Y",
-		"COMPONENT_TEMPLATE" => "left"
 	),
 	false
 );?>

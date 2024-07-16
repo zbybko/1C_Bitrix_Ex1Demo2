@@ -3,16 +3,16 @@ $aMenuLinks = Array(
 	Array(
 		"Условия сотрудничества", 
 		"partneram/", 
-		Array(), 
+		Array(),
 		Array(), 
 		"" 
 	),
 	Array(
-		" Расписание мероприятий", 
-		"/partneram/raspisanie-meropriyatiy/", 
-		Array(), 
-		Array(), 
-		"" 
+		" Расписание мероприятий",
+		"/partneram/raspisanie-meropriyatiy/",
+		Array(),
+		Array(),
+		""
 	)
 );
 ?>
