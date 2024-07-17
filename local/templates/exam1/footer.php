@@ -25,14 +25,16 @@ IncludeTemplateLangFile(__FILE__);
 );?>
   <!-- side anonse -->
   <?$APPLICATION->IncludeComponent(
-    "bitrix:main.include",
-    "useful",
-    Array(
-      "AREA_FILE_SHOW" => "sect",
-      "AREA_FILE_SUFFIX" => "inc",
-      "EDIT_TEMPLATE" => ""
-    )
-  );?>
+	"bitrix:main.include", 
+	"useful", 
+	array(
+		"AREA_FILE_SHOW" => "sect",
+		"AREA_FILE_SUFFIX" => "inc",
+		"EDIT_TEMPLATE" => "",
+		"COMPONENT_TEMPLATE" => "useful"
+	),
+	false
+);?>
   <!-- /side anonse -->
   <!-- side wrap -->
   <div class="side-wrap">
