@@ -1,4 +1,5 @@
-<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
+<? global $APPLICATION;
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 <?
 IncludeTemplateLangFile(__FILE__);
 ?>
@@ -162,13 +163,11 @@ IncludeTemplateLangFile(__FILE__);
   <!-- /nav -->
   <? if ($APPLICATION->GetCurPage() != '/'): ?>
     <!-- breadcrumbs -->
-    <div class="breadcrumbs-box">
-      <div class="inner-wrap">
-        <a href="">Главная</a>
-        <a href="">Мебель</a>
-        <span>Выставки и события</span>
-      </div>
-    </div>
+    <? $APPLICATION->IncludeComponent(
+      "bitrix:breadcrumb",
+      "primary",
+      array()
+    ); ?>
     <!-- /breadcrumbs -->
   <? endif; ?>
   <!-- page -->
