@@ -32,9 +32,13 @@ $str = $arResult["NAME"] . ' ,' . $arDate["mday"] . ' ' . $month[(int)($arDate["
 
 if ($arResult['PROPERTIES']['POSITION']['VALUE']) $str .= ', ' . $arResult['PROPERTIES']['POSITION']['VALUE'];
 if ($arResult['PROPERTIES']['COMPANY']['VALUE']) $str .= ', ' . $arResult['PROPERTIES']['COMPANY']['VALUE'];
-
-if (isset($arResult["DETAIL_PICTURE"]["SRC"])) {
-  $src = $arResult["DETAIL_PICTURE"]["SRC"];
+if (isset($arResult["DETAIL_PICTURE"]["ID"])) {
+  $arImgTmp = CFile::ResizeImageGet(
+    $arResult["DETAIL_PICTURE"]["ID"],
+    array("width" => 66, "height" => 66),
+    BX_RESIZE_IMAGE_PROPORTIONAL
+  );
+  $src = $arImgTmp["src"];
 } else {
   $src = SITE_TEMPLATE_PATH . '/img/no_photo.jpg';
 }

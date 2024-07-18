@@ -39,8 +39,13 @@ $month = array(
   if ($arItem['PROPERTIES']['POSITION']['VALUE']) $str .= ', '. $arItem['PROPERTIES']['POSITION']['VALUE'];
   if ($arItem['PROPERTIES']['COMPANY']['VALUE']) $str .= ', '. $arItem['PROPERTIES']['COMPANY']['VALUE'];
 
-  if (isset($arItem["PREVIEW_PICTURE"]["SRC"])) {
-    $src = $arItem["PREVIEW_PICTURE"]["SRC"];
+  if (isset($arItem["PREVIEW_PICTURE"]["ID"])) {
+    $arImgTmp = CFile::ResizeImageGet(
+      $arItem["PREVIEW_PICTURE"]["ID"],
+      array("width" => 66, "height" => 66),
+      BX_RESIZE_IMAGE_PROPORTIONAL
+    );
+    $src = $arImgTmp["src"];
   }
   else {
     $src = SITE_TEMPLATE_PATH. '/img/no_photo.jpg';
@@ -50,7 +55,7 @@ $month = array(
     <div class="review-block-title">
       <? if ($arParams["DISPLAY_NAME"] != "N" && $arItem["NAME"]): ?>
         <span class="review-block-name">
-				    <? echo $arItem["NAME"] ?>
+				    <a href="<?=$arItem["DETAIL_PAGE_URL"]?>"><? echo $arItem["NAME"] ?></a>
           </span>
       <? endif; ?>
       <? if ($arItem["ACTIVE_FROM"]): ?>

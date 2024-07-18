@@ -6,14 +6,13 @@ $this->setFrameMode(true);
 $arResult = $arResult["ITEMS"];
 
 foreach ($arResult as $item):
-
-  if (isset($item["PREVIEW_PICTURE"]["ID"])) {
+  \Bitrix\Main\Diag\Debug::writeToFile($item, 'item', '1.txt');
+  if (isset($item["DETAIL_PICTURE"]["ID"])) {
     $arFileTmp = CFile::ResizeImageGet(
-      $item["PREVIEW_PICTURE"]["ID"],
+      $item["DETAIL_PICTURE"]["ID"],
       array("width" => 39, "height" => 39),
       BX_RESIZE_IMAGE_PROPORTIONAL,
     );
-    \Bitrix\Main\Diag\Debug::writeToFile($arFileTmp, 'item', '1.txt');
     $src = $arFileTmp['src'];
   }
   else {
@@ -25,9 +24,9 @@ foreach ($arResult as $item):
     <div class="inner-block">
       <div class="title">
         <div class="photo-block">
-          <img src="" alt="">
+          <img src="<?=$src ?>" alt="">
         </div>
-        <div class="name-block"><a href="<?=$src ?>"><?=$item["NAME"]?></a></div>
+        <div class="name-block"><a href="<?=$item["DETAIL_PAGE_URL"]?>"><?=$item["NAME"]?></a></div>
         <div class="pos-block"><?=$item["PROPERTIES"]["POSITION"]["VALUE"] ?></div>
       </div>
       <div class="text-block"><?=$item["PREVIEW_TEXT"]?></div>
