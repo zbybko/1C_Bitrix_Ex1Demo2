@@ -1,39 +1,19 @@
 <?php
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
-use Bitrix\Main\Localization\Loc;
-use Bitrix\Catalog\ProductTable;
-
-/**
- * @global CMain $APPLICATION
- * @var array $arParams
- * @var array $arResult
- * @var CatalogSectionComponent $component
- * @var CBitrixComponentTemplate $this
- * @var string $templateName
- * @var string $componentPath
- *
- *  _________________________________________________________________________
- * |	Attention!
- * |	The following comments are for system use
- * |	and are required for the component to work correctly in ajax mode:
- * |	<!-- items-container -->
- * |	<!-- pagination-container -->
- * |	<!-- component-end -->
- */
-
 $this->setFrameMode(true);
 
 $arResult = $arResult["ITEMS"];
 
 foreach ($arResult as $item):
-  \Bitrix\Main\Diag\Debug::writeToFile($item, 'item', '1.txt');
-  if (isset($item["DETAIL_PICTURE"]["SRC"])) {
+
+  if (isset($item["PREVIEW_PICTURE"]["ID"])) {
     $arFileTmp = CFile::ResizeImageGet(
-      $item["DETAIL_PICTURE"]["SRC"],
+      $item["PREVIEW_PICTURE"]["ID"],
       array("width" => 39, "height" => 39),
       BX_RESIZE_IMAGE_PROPORTIONAL,
     );
+    \Bitrix\Main\Diag\Debug::writeToFile($arFileTmp, 'item', '1.txt');
     $src = $arFileTmp['src'];
   }
   else {
