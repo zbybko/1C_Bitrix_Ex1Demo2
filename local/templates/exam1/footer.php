@@ -63,7 +63,7 @@ IncludeTemplateLangFile(__FILE__);
           "reviews-left",
           array(
             "IBLOCK_TYPE" => "rew",
-            "IBLOCK_ID" => "5",
+            "IBLOCK_ID" => "6",
             "SECTION_ID" => "",
             "SECTION_USER_FIELDS" => array(
               0 => "",
@@ -83,8 +83,8 @@ IncludeTemplateLangFile(__FILE__);
               1 => "",
               2 => "",
             ),
-            "SECTION_URL" => "/",
-            "DETAIL_URL" => "/",
+            "SECTION_URL" => "",
+            "DETAIL_URL" => "/reviews/#ELEMENT_CODE#/",
             "BASKET_URL" => "",
             "ACTION_VARIABLE" => "action",
             "AJAX_MODE" => "N",
@@ -111,7 +111,7 @@ IncludeTemplateLangFile(__FILE__);
             "USE_PRODUCT_QUANTITY" => "N",
             "DISPLAY_TOP_PAGER" => "N",
             "DISPLAY_BOTTOM_PAGER" => "Y",
-            "PAGER_TITLE" => "Ads",
+            "PAGER_TITLE" => "",
             "PAGER_SHOW_ALWAYS" => "N",
             "PAGER_TEMPLATE" => "",
             "PAGER_DESC_NUMBERING" => "N",

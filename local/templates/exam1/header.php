@@ -84,8 +84,11 @@ IncludeTemplateLangFile(__FILE__);
       <div class="menu-block popup-wrap">
         <a href="/" class="btn-menu btn-toggle"></a>
         <div class="menu popup-block">
-          <? $APPLICATION->IncludeComponent("bitrix:menu", "top", array(
-	"ALLOW_MULTI_SELECT" => "N",
+          <? $APPLICATION->IncludeComponent(
+	        "bitrix:menu",
+	        "top",
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
 		"CHILD_MENU_TYPE" => "top2",
 		"DELAY" => "N",
 		"MAX_LEVEL" => "3",
@@ -99,7 +102,7 @@ IncludeTemplateLangFile(__FILE__);
 	),
 	false,
 	array(
-	"ACTIVE_COMPONENT" => "Y"
+		"ACTIVE_COMPONENT" => "Y"
 	)
 ); ?>
           <!--<ul class="">

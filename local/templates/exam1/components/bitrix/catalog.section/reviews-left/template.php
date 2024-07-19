@@ -18,6 +18,11 @@ foreach ($arResult as $item):
   else {
     $src = SITE_TEMPLATE_PATH. 'img/no_photo_left_block.jpg';
   }
+
+  $text = TruncateText(
+    $item["PREVIEW_TEXT"],
+    150
+  );
 ?>
 <div class="item">
   <div class="side-block side-opin">
@@ -29,7 +34,7 @@ foreach ($arResult as $item):
         <div class="name-block"><a href="<?=$item["DETAIL_PAGE_URL"]?>"><?=$item["NAME"]?></a></div>
         <div class="pos-block"><?=$item["PROPERTIES"]["POSITION"]["VALUE"] ?></div>
       </div>
-      <div class="text-block"><?=$item["PREVIEW_TEXT"]?></div>
+      <div class="text-block"><?=$text?></div>
     </div>
   </div>
 </div>

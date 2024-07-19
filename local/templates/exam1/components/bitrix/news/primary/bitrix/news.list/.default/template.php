@@ -51,7 +51,7 @@ $month = array(
     $src = SITE_TEMPLATE_PATH. '/img/no_photo.jpg';
   }
   ?>
-  <div class="review-block">
+  <div class="review-block"  id="<?=$this->GetEditAreaId($arItem["ID"])?>">
     <div class="review-block-title">
       <? if ($arParams["DISPLAY_NAME"] != "N" && $arItem["NAME"]): ?>
         <span class="review-block-name">
@@ -78,3 +78,6 @@ $month = array(
     </div>
   </div>
 <? endforeach; ?>
+<?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>
+  <br /><?=$arResult["NAV_STRING"]?>
+<?endif;?>
